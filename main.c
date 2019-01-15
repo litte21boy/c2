@@ -2,6 +2,30 @@
 
 char arr[1024]; //保存敏感字符
 int index = 0;  //敏感字符在数组中的储存位置
+int isMingan(char x)
+{
+
+    int count = 0; //该变量记录，x与每一个元素相等的次数
+
+    //使用for循环，让x和数组中的每一个元素进行比较
+    for (int i = 0; i < index; i++)
+    {
+        if (x == arr[i])
+        {
+            count++;
+        }
+    }
+
+    if (count == 0)
+    {
+        //如果比较完成之后，没有一次相等
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+}
 int main()
 {
 
@@ -58,6 +82,36 @@ int main()
         }
         if (code == 4)
         {
+            printf("qingshuruyiduanyingweng：\n");
+            
+            char content[1024];
+
+           
+            scanf("%s",content);
+
+           
+            for(int i = 0;1;i++){
+              
+                if(content[i] == '\0'){
+                    break;
+                }
+
+                if(isMingan(arr[i]) == 1){
+                    content[i] = '*';
+                }
+
+                printf("%c",content[i]);
+
+
+            }
+
+            printf("\n");
+
+            printf("替换完成，点击回车继续\n");
+            char x;
+            scanf("%c", &x);
+            scanf("%c", &x);
+
         }
         if (code == 5)
         {
